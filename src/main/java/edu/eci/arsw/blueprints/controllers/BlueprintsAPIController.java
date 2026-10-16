@@ -56,7 +56,7 @@ public class BlueprintsAPIController {
             services.addNewBlueprint(bp);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (BlueprintPersistenceException e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(Map.of("error", e.getMessage()));
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error", e.getMessage()));
         }
     }
 
